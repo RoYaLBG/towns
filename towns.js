@@ -43,3 +43,5 @@ function _shuffle(a) {
         a[j] = x;
     }
 }
+
+console.log("Hello from the past");
