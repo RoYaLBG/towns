@@ -1,5 +1,6 @@
 $(document).ready(function() {
 	$('#btnDelete').click(deleteTown);
+	$('#btnShuffle').click(shuffleTowns);
 });
 
 function deleteTown() {
@@ -16,4 +17,23 @@ function deleteTown() {
 		$('#result').text(townName + " deleted.");
 	else
 		$('#result').text(townName + " not found.");
+}
+
+function shuffleTowns() {
+	let children = $('#towns').children();
+	_shuffle(children);
+	$('#towns').html();
+	for (let i = 0; i < children.length; i++) {
+        $('#towns').append(children[i]);
+	}
+}
+
+function _shuffle(a) {
+    var j, x, i;
+    for (i = a.length; i; i--) {
+        j = Math.floor(Math.random() * i);
+        x = a[i - 1];
+        a[i - 1] = a[j];
+        a[j] = x;
+    }
 }
