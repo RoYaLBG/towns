@@ -1,5 +1,6 @@
 $(document).ready(function() {
 	$('#btnDelete').click(deleteTown);
+	$('#btnAdd').click(() => addTown($("#townName").val()));
 });
 
 function deleteTown() {
@@ -16,4 +17,8 @@ function deleteTown() {
 		$('#result').text(townName + " deleted.");
 	else
 		$('#result').text(townName + " not found.");
+}
+
+function addTown(town) {
+	$("#towns").append("<option>" + town + "</option>");
 }
