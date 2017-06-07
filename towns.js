@@ -22,6 +22,7 @@ function deleteTown() {
 
 function addTown(town) {
 	$("#towns").append("<option>" + town + "</option>");
+    $('#result').text(town + " added succesfully.");
 }
 
 function shuffleTowns() {
